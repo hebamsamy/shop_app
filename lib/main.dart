@@ -6,6 +6,7 @@ import 'package:shop_app/MyCart.dart';
 import 'package:shop_app/cart_screen.dart';
 import 'package:shop_app/favourite_screen.dart';
 import 'package:shop_app/home_screen.dart';
+import 'package:shop_app/login_Screen.dart';
 import 'package:shop_app/myFavourite.dart';
 import 'package:shop_app/settings_screen.dart';
 import 'package:shop_app/tab_Item.dart';
@@ -105,13 +106,19 @@ class _SliverTabState extends State<SliverTab> {
               )
             ]),
             actions: [
-              CircleAvatar(
-                child: Icon(
-                  Icons.notifications,
-                  color: Colors.grey,
+              IconButton(
+                icon: Icon(
+                  Icons.login,
+                  color: Colors.white,
                   size: 35,
                 ),
-                backgroundColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(),
+                      ));
+                },
               )
             ],
             bottom: (selected == 0)
